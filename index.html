@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaon Mart</title>
+<style>
+:root{--green:#287a3f;--orange:#ff8a00;--bg:#f5f5f5;--text:#222}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #ddd}.nav{max-width:1150px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.logo{font-size:24px;font-weight:800;color:var(--green);white-space:nowrap}.logo span{color:var(--orange)}
+.search{flex:1;height:42px;padding:0 17px;border:1px solid #ddd;border-radius:6px;background:#f7f7f7;font-size:14px}
+.lang{height:40px;border:1px solid #ddd;background:#fff;padding:0 12px;border-radius:6px;font-weight:700}.cart{height:40px;border:0;background:var(--green);color:#fff;padding:0 15px;border-radius:6px;font-weight:700}
+.hero{max-width:1150px;margin:14px auto;padding:0 16px}.heroBox{background:linear-gradient(100deg,#dfeeda,#fff0d2);border-radius:8px;padding:30px;display:grid;grid-template-columns:1.4fr .6fr;align-items:center}
+.badge{display:inline-block;background:#fff;border-radius:4px;padding:7px 10px;font-size:12px;font-weight:700}.hero h1{font-size:36px;line-height:1.15;margin:12px 0 6px}.hero h1 b{color:var(--green)}.hero p{font-size:16px;margin:8px 0 18px;color:#555}.cta{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;padding:12px 20px;border-radius:5px;font-weight:800}
+section{max-width:1150px;margin:18px auto;padding:0 16px}h2{font-size:21px;margin:0 0 12px}.cats{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}.cat{background:#fff;border-radius:7px;padding:15px;text-align:center;border:1px solid #e5e5e5;font-weight:700;font-size:14px}.cat div{font-size:31px;margin-bottom:7px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{background:#fff;border-radius:7px;padding:10px;border:1px solid #e2e2e2;position:relative}
+.pic{height:175px;border-radius:5px;background:#f1f5ef;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pic img{width:100%;height:100%;object-fit:cover}
+.card h3{font-size:14px;line-height:1.3;margin:10px 0 5px;min-height:36px}.price{font-size:19px;font-weight:800}.old{text-decoration:line-through;color:#999;font-size:12px;margin-left:5px}
+.discount{color:var(--green);font-size:12px;font-weight:700;margin:3px 0}.rating{display:inline-block;background:var(--green);color:#fff;border-radius:3px;padding:3px 6px;font-size:11px;margin:3px 0}
+.buy{width:100%;margin-top:9px;border:1px solid var(--green);background:#fff;color:var(--green);padding:9px;border-radius:5px;font-weight:800;cursor:pointer}
+footer{background:#202820;color:#fff;margin-top:25px;padding:28px 18px;text-align:center}
+@media(max-width:760px){.products{grid-template-columns:repeat(2,1fr);gap:8px}.heroBox{grid-template-columns:1fr;padding:20px 16px}.cats{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+
+<header><div class="nav">
+<div class="logo">🌾 Gaon <span>Mart</span></div>
+<input class="search" placeholder="क्या ढूँढ रहे हैं?">
+<button class="cart">🛒 Cart</button>
+</div></header>
+
+<div class="hero"><div class="heroBox">
+<div><span class="badge">🇮🇳 online shopping</span>
+<h1>मिलाएँ हाथ,<br><b>Gaon Mart</b> के साथ</h1>
+<p>काम की चीज़ें, आसान दाम और आपके घर तक delivery.</p>
+<a class="cta" href="#products">अभी खरीदें →</a></div>
+<div style="font-size:70px;text-align:center">🌾🛒</div>
+</div></div>
+
+<section id="products">
+<h2>आज के Popular Products</h2>
+<div class="products">
+  <div class="card">
+    <div class="pic"><img src="saree1.jpg" alt="Saree"></div>
+    <h3>MIGORA हॉटफिक्स कार्य पारंपरिक फैंसी साड़ी</h3>
+    <div class="price">₹553 <span class="old">₹790</span></div>
+    <div class="discount">30% OFF (Online पर Extra 10% छूट!)</div>
+    <span class="rating">★ 4.0</span>
+    <button class="buy" onclick="openCheckout('MIGORA हॉटफिक्स फैंसी साड़ी', 553)">Order Now</button>
+  </div>
+  
+  <div class="card">
+    <div class="pic"><img src="saree2.jpg" alt="Saree"></div>
+    <h3>Jay Khodiyar Creation महिलाओं की जॉर्जेट साड़ी</h3>
+    <div class="price">₹525 <span class="old">₹700</span></div>
+    <div class="discount">25% OFF (Online पर Extra 10% छूट!)</div>
+    <span class="rating">★ 4.3</span>
+    <button class="buy" onclick="openCheckout('Jay Khodiyar Creation जॉर्जेट साड़ी', 525)">Order Now</button>
+  </div>
+
+  <div class="card">
+    <div class="pic"><img src="product3.jpg" alt="Height Veda"></div>
+    <h3>The Height Veda (Buy 1 Get 1 Free - सीमित समय)</h3>
+    <div class="price">₹646 <span class="old">₹950</span></div>
+    <div class="discount">32% OFF (B1G1)</div>
+    <span class="rating">★ 4.3</span>
+    <button class="buy" onclick="openCheckout('The Height Veda (B1G1 Free)', 646)">Order Now</button>
+  </div>
+
+  <div class="card">
+    <div class="pic"><img src="product4.jpg" alt="Capsule"></div>
+    <h3>Sultan Night Play Mode Capsule (African Herbs)</h3>
+    <div class="price">₹768 <span class="old">₹1600</span></div>
+    <div class="discount">52% OFF</div>
+    <span class="rating">★ 4.2</span>
+    <button class="buy" onclick="openCheckout('Sultan Night Play Mode Capsule', 768)">Order Now</button>
+  </div>
+
+  <div class="card">
+    <div class="pic"><img src="product5.jpg" alt="Speaker"></div>
+    <h3>वायरलेस ब्लूटूथ कार स्पीकर (कॉम्पैक्ट और पावरफुल)</h3>
+    <div class="price">₹910 <span class="old">₹1300</span></div>
+    <div class="discount">30% OFF</div>
+    <span class="rating">★ 4.1</span>
+    <button class="buy" onclick="openCheckout('वायरलेस ब्लूटूथ कार स्पीकर', 910)">Order Now</button>
+  </div>
+
+  <div class="card">
+    <div class="pic"><img src="product6.jpg" alt="Astronaut Speaker"></div>
+    <h3>MLA M6 ब्लूटूथ पोर्टेबल स्पीकर (Astronaut Design)</h3>
+    <div class="price">₹748 <span class="old">₹1100</span></div>
+    <div class="discount">32% OFF</div>
+    <span class="rating">★ 3.9</span>
+    <button class="buy" onclick="openCheckout('MLA M6 ब्लूटूथ पोर्टेबल स्पीकर', 748)">Order Now</button>
+  </div>
+</div>
+</section>
+
+<section id="checkoutPage" style="display:none;max-width:760px;margin:auto;padding:10px">
+  <div style="background:#fff;padding:15px;border-radius:8px;border:1px solid #ddd">
+    <button onclick="showHome()" style="border:0;background:none;font-size:20px;cursor:pointer">‹ Back</button>
+    <h2>Checkout</h2>
+    <input id="coName" placeholder="पूरा नाम" style="width:100%;padding:10px;margin:5px 0">
+    <input id="coPhone" placeholder="मोबाइल नंबर" style="width:100%;padding:10px;margin:5px 0">
+    <textarea id="coAddress" placeholder="पूरा पता (घर नंबर, गली, गाँव/शहर, पिन कोड)" style="width:100%;padding:10px;margin:5px 0"></textarea>
+    
+    <h3>भुगतान का तरीका (Payment Option)</h3>
+    <label style="display:block;padding:10px;margin:5px 0;background:#f9f9f9">
+      <input type="radio" name="pay" value="COD" checked onclick="updatePricing()"> 💵 Cash on Delivery (COD)
+    </label>
+    <label style="display:block;padding:10px;margin:5px 0;background:#f9f9f9">
+      <input type="radio" name="pay" value="Online" onclick="updatePricing()"> 📱 UPI / Online Payment <span style="color:var(--green);font-weight:bold;">(🔥 Extra 10% Discount)</span>
+    </label>
+
+    <div id="upiBox" style="display:none;background:#f9f9f9;padding:15px;text-align:center;margin-top:10px;border:1px dashed var(--green)">
+      <p style="margin:0 0 10px;font-weight:bold;color:var(--green);">स्कैन करें और 8393080944@ptaxis पर Payment करें:</p>
+      <img src="qrcode.jpg" alt="QR" style="width:150px;height:150px;display:block;margin:auto;border:1px solid #ddd">
+      <div style="background:#fff;padding:6px;margin-top:8px;font-weight:bold">UPI ID: 8393080944@ptaxis</div>
+    </div>
+
+    <h3>Order Summary</h3>
+    <div style="display:flex;justify-content:space-between"><span id="coProduct">Product</span><strong id="coPrice">₹0</strong></div>
+    <div id="discountRow" style="display:flex;justify-content:space-between;color:var(--green);display:none"><span>Online Discount (10%)</span><strong id="discountAmount">-₹0</strong></div>
+    <hr>
+    <div style="display:flex;justify-content:space-between;font-size:18px"><strong>Total</strong><strong id="coTotal">₹0</strong></div>
+    
+    <button onclick="placeWhatsAppOrder()" style="width:100%;margin-top:15px;background:var(--green);color:#fff;border:0;padding:14px;font-weight:800;border-radius:5px;cursor:pointer">WhatsApp पर Order भेजें</button>
+  </div>
+</section>
+
+<footer><p>© Gaon Mart — All Rights Reserved</p></footer>
+
+<script>
+let selectedPrice = 0;
+function openCheckout(name, price){
+  document.getElementById('products').style.display='none';
+  document.querySelector('.hero').style.display='none';
+  document.getElementById('checkoutPage').style.display='block';
+  document.getElementById('coProduct').textContent=name;
+  selectedPrice = price;
+  document.querySelector('input[name="pay"][value="COD"]').checked = true;
+  updatePricing();
+  window.scrollTo(0,0);
+}
+function showHome(){
+  document.getElementById('checkoutPage').style.display='none';
+  document.getElementById('products').style.display='block';
+  document.querySelector('.hero').style.display='block';
+  window.scrollTo(0,0);
+}
+function updatePricing(){
+  let isOnline = document.querySelector('input[name="pay"][value="Online"]').checked;
+  document.getElementById('upiBox').style.display = isOnline ? 'block' : 'none';
+  let final = selectedPrice;
+  let discRow = document.getElementById('discountRow');
+  if(isOnline){
+    let disc = Math.round(selectedPrice * 0.10);
+    final = selectedPrice - disc;
+    discRow.style.display = 'flex';
+    document.getElementById('discountAmount').textContent = '-₹' + disc;
+  } else {
+    discRow.style.display = 'none';
+  }
+  document.getElementById('coPrice').textContent = '₹' + selectedPrice;
+  document.getElementById('coTotal').textContent = '₹' + final;
+}
+function placeWhatsAppOrder(){
+  let name = document.getElementById('coName').value.trim();
+  let phone = document.getElementById('coPhone').value.trim();
+  let addr = document.getElementById('coAddress').value.trim();
+  if(!name || !phone || !addr){ alert('कृपया नाम, फोन नंबर और पता भरें।'); return; }
+  let prod = document.getElementById('coProduct').textContent;
+  let tot = document.getElementById('coTotal').textContent;
+  let pay = document.querySelector('input[name="pay"]:checked').value;
+  let msg = `🛍️ *Gaon Mart Order*\n*Product:* ${prod}\n*Total:* ${tot}\n*Payment:* ${pay}\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n📍 *Address:* ${addr}`;
+  window.open(`https://wa.me/916395271730?text=` + encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>
